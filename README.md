@@ -48,7 +48,7 @@ An emulator can be used for interface testing. However, a physical Android devic
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/RoadDamageDetector.git
+https://github.com/Topsy-yy/YOLO.git
 
 cd RoadDamageDetector
 ```

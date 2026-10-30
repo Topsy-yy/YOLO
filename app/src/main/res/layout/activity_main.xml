@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <!-- Live Camera Feed Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Custom Canvas for Bounding Box Overlay -->
+    <com.example.roaddamagedetector.OverlayView
+        android:id="@+id/overlayView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/viewFinder"
+        app:layout_constraintEnd_toEndOf="@id/viewFinder"
+        app:layout_constraintStart_toStartOf="@id/viewFinder"
+        app:layout_constraintTop_toTopOf="@id/viewFinder" />
+
+    <!-- Top GPS Location Information Panel -->
+    <LinearLayout
+        android:id="@+id/locationHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#99000000"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvLocationHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS Coordinates: Acquiring lock..."
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDetectionSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Damage Detected: None"
+            android:textColor="#00FF00"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Bottom Action Controls -->
+    <Button
+        android:id="@+id/btnCaptureReport"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="24dp"
+        android:backgroundTint="#D32F2F"
+        android:text="Capture &amp; Log Damage"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
